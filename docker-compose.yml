@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+
+  dbpostgres:
+    image: postgres:12-alpine
+    volumes:
+      - storebalance-postgres-volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: "storebalance_sqldb"
+      POSTGRES_USER: "storebalance_user"
+      POSTGRES_PASSWORD: "123456"
+    networks:
+      - storebalance_backend
+
+  storebalance.webapi:
+    container_name: storebalance.webapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - storebalance_backend
+    ports: 
+      - 5000:80
+    depends_on: 
+      - dbpostgres
+
+volumes:
+  storebalance-postgres-volume:
+
+networks:
+  storebalance_backend:

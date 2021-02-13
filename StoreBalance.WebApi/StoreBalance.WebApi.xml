@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StoreBalance.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:StoreBalance.WebApi.Controllers.WalletController.WalletById(System.Guid,StoreBalance.WebApi.Domain.Services.IQueryBalanceService)">
+            <summary>
+            Get Wallet ByUserId
+            </summary>
+            <param name="userid">Id from user.</param>
+            <param name="walletByUserIdService"></param>
+            <returns>Returns the user's current balance</returns>
+        </member>
+        <member name="M:StoreBalance.WebApi.Controllers.WalletController.FutureBalance(System.Guid,System.DateTime,StoreBalance.WebApi.Domain.Services.IQueryFutureBalanceService)">
+            <summary>
+            Get Wallet Future Balance
+            </summary>
+            <param name="userid">Id from user.</param>
+            <param name="enddate">End Datetime. (yyyy-MM-ddTHH:mm:ss)</param>
+            <param name="queryFutureBalanceService"></param>
+            <returns>Returns the user's future balance</returns>
+        </member>
+        <member name="M:StoreBalance.WebApi.Controllers.WalletController.RecordsByUserAndDate(System.Guid,System.DateTime,System.DateTime,StoreBalance.WebApi.Domain.Services.IQueryWalletRecordsService)">
+            <summary>
+            Get Records by period
+            </summary>
+            <param name="userid">Id from user.</param>
+            <param name="begindate">Begin Datetime. (yyyy-MM-ddTHH:mm:ss)</param>
+            <param name="enddate">End Datetime. (yyyy-MM-ddTHH:mm:ss)</param>
+            <param name="walletRecordsByUserAndPeriod"></param>
+            <returns>Returns the user's wallet's records</returns>
+        </member>
+        <member name="M:StoreBalance.WebApi.Controllers.WalletController.CreateNewWalletDebit(System.Guid,StoreBalance.WebApi.Domain.Dtos.WalletRecordsDto.ResquestDebit,StoreBalance.WebApi.Domain.Services.ICreateNewWalletDebitService)">
+            <summary>
+            Create New Wallet Debit
+            </summary>
+            <param name="userid"></param>
+            <param name="request"></param>
+            <param name="createNewWalletDebitService"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StoreBalance.WebApi.Controllers.WalletController.CreateNewWalletCredit(System.Guid,StoreBalance.WebApi.Domain.Dtos.WalletRecordsDto.ResquestCredit,StoreBalance.WebApi.Domain.Services.ICreateNewWalletCreditService)">
+            <summary>
+            Create New Wallet Credit
+            </summary>
+            <param name="userid"></param>
+            <param name="request"></param>
+            <param name="createNewWalletCreditService"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StoreBalance.WebApi.Controllers.WalletController.CreateNewWalletCreditFuture(System.Guid,StoreBalance.WebApi.Domain.Dtos.WalletRecordsDto.ResquestCreditFuture,StoreBalance.WebApi.Domain.Services.ICreateNewWalletCreditFutureService)">
+            <summary>
+            Create New Wallet Credit Future
+            </summary>
+            <param name="userid"></param>
+            <param name="request"></param>
+            <param name="createNewWalletCreditFutureService"></param>
+            <returns></returns>
+        </member>
+        <member name="T:StoreBalance.WebApi.Domain.Dtos.WalletDto.Response">
+            <summary>
+            Response Wallet
+            </summary>
+        </member>
+        <member name="T:StoreBalance.WebApi.Domain.Dtos.WalletRecordsDto.Response">
+            <summary>
+            Response Wallet Records
+            </summary>
+        </member>
+        <member name="T:StoreBalance.WebApi.Domain.Dtos.WalletRecordsDto.ResquestDebit">
+            <summary>
+            Request Debit Wallet
+            </summary>
+        </member>
+        <member name="T:StoreBalance.WebApi.Domain.Dtos.WalletRecordsDto.ResquestCredit">
+            <summary>
+            Request Credit Wallet
+            </summary>
+        </member>
+        <member name="T:StoreBalance.WebApi.Domain.Dtos.WalletRecordsDto.ResquestCreditFuture">
+            <summary>
+            Request Credit Wallet Future
+            </summary>
+        </member>
+    </members>
+</doc>
