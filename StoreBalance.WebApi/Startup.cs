@@ -28,7 +28,7 @@ namespace StoreBalance.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().ConfigureApiBehaviorOptions(opt => opt.SuppressModelStateInvalidFilter = true);
 
             #region Swagger
             services.AddOpenApiDocument(settings =>
@@ -66,6 +66,7 @@ namespace StoreBalance.WebApi
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IWalletRepository, WalletRepository>();
             #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

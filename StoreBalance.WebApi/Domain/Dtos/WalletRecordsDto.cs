@@ -23,6 +23,9 @@ namespace StoreBalance.WebApi.Domain.Dtos
         {
             [Required(ErrorMessage = "Value is required")]
             public decimal Value { get; set; }
+
+            [Required(ErrorMessage = "Teste is required")]
+            public string Teste { get; set; }
         }
 
         /// <summary>
